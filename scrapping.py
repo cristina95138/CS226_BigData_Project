@@ -8,12 +8,12 @@ client = tweepy.Client(bearer_token, wait_on_rate_limit=True)
 tweets = []
 
 for response in tweepy.Paginator(client.search_recent_tweets,
-                                 query = 'Shein lang:en', # change brand name
+                                 query = 'Shein -is:retweet lang:en', # change brand name
                                  user_fields = ['username', 'public_metrics', 'description', 'location'],
                                  tweet_fields = ['created_at', 'geo', 'public_metrics', 'text'],
                                  expansions = 'author_id',
-                                 start_time = '2021-12-02T00:00:00Z',
-                                 end_time = '2021-12-05T00:00:00Z',
+                                 start_time = '2021-12-01T09:00:20Z',
+                                 end_time = '2021-12-07T00:00:00Z',
                                  max_results=100).flatten(limit=1200):
     time.sleep(1)
     tweets.append(response)
