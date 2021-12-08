@@ -14,8 +14,8 @@ for response in tweepy.Paginator(client.search_recent_tweets,
                                  expansions = 'author_id',
                                  start_time = '2021-12-01T09:00:20Z',
                                  end_time = '2021-12-07T00:00:00Z',
-                                 max_results=100).flatten(limit=1):
-    time.sleep(1)
+                                 max_results=100).flatten(limit=100000):
+    #time.sleep(1)
     tweets.append(response)
 
 results = []
@@ -26,6 +26,7 @@ for response in tweets:
     # Put all of the information we want to keep in a single dictionary for each tweet
     results.append({'author_id': response.author_id,
                     'text': response.text,
+                    'geo': response.geo,
                     'created_at': response.created_at,
                     'retweets': response.public_metrics['retweet_count'],
                     'replies': response.public_metrics['reply_count'],
