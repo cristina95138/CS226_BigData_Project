@@ -15,7 +15,7 @@ for response in tweepy.Paginator(client.search_recent_tweets,
                                  expansions = 'author_id',
                                  start_time = '2021-12-02T00:00:00Z',
                                  end_time = '2021-12-05T00:00:00Z',
-                                 max_results=100).flatten(limit=500):
+                                 max_results=100).flatten(limit=1200):
     time.sleep(1)
     tweets.append(response)
 
