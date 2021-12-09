@@ -31,10 +31,35 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Data/Preprocessed Tweets" />
+      <recent name="$PROJECT_DIR$/Data/Geo Tweets" />
+      <recent name="$PROJECT_DIR$/Data/Raw Tweet Data" />
       <recent name="$PROJECT_DIR$/Data" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.scrapping">
+    <configuration name="preprocessing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CS226_BigData_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="scrapping" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS226_BigData_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -60,6 +85,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.scrapping" />
+        <item itemvalue="Python.preprocessing" />
       </list>
     </recent_temporary>
   </component>
@@ -71,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638938335768</updated>
-      <workItem from="1638938339816" duration="13380000" />
+      <workItem from="1638938339816" duration="22630000" />
     </task>
     <servers />
   </component>
@@ -90,6 +116,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CS226_BigData_Project$scrapping.coverage" NAME="scrapping Coverage Results" MODIFIED="1638964529707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS226_BigData_Project$preprocessing.coverage" NAME="preprocessing Coverage Results" MODIFIED="1639010646280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS226_BigData_Project$scrapping.coverage" NAME="scrapping Coverage Results" MODIFIED="1639010847324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
