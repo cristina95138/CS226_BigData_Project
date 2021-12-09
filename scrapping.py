@@ -8,7 +8,7 @@ client = tweepy.Client(bearer_token, wait_on_rate_limit=True)
 tweets = []
 
 # (Shein OR SHEIN OR shein): 9,214
-# (H&M OR HandM OR (H and M) OR h&m OR H&m OR h&M OR Handm OR handM): 12,119
+# (H&M OR HandM OR (H and M) OR h&m OR H&m OR h&M OR Handm OR handM): 11,366
 # (Zara OR zara OR ZARA): 13,927
 # (Boohoo OR boohoo OR BOOHOO): 4,562
 # (Nike OR nike OR NIKE): 40,000
@@ -19,13 +19,13 @@ tweets = []
 # (Gucci OR gucci OR GUCCI): 40,000
 
 for response in tweepy.Paginator(client.search_recent_tweets,
-                                 query = '(Nike OR nike OR NIKE) -is:retweet lang:en', # change brand name
+                                 query = '(H&M OR HandM OR (H and M) OR h&m OR H&m OR h&M OR Handm OR handM) -is:retweet lang:en', # change brand name
                                  user_fields = ['username', 'public_metrics', 'description', 'location'],
                                  tweet_fields = ['created_at', 'geo', 'public_metrics', 'text'],
                                  expansions = 'author_id',
-                                 start_time = '2021-12-02T01:00:00Z',
+                                 start_time = '2021-12-02T11:00:00Z',
                                  end_time = '2021-12-08T12:00:00Z',
-                                 max_results=100).flatten(limit=60000):
+                                 max_results=100).flatten(limit=20000):
     #time.sleep(1)
     tweets.append(response)
 
@@ -48,7 +48,7 @@ for response in tweets:
 # Change this list of dictionaries into a dataframe
 df = pd.DataFrame(results)
 
-df.to_csv('nike.csv', index=False) # change brand name
+df.to_csv('h&m.csv', index=False) # change brand name
 
 '''
 client = tweepy.Client(bearer_token='the token')

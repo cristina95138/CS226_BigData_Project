@@ -17,6 +17,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/Data/Preprocessed Tweets/h&amp;m_p.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/Data/Preprocessed Tweets/nike_p.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/adidas.csv">
           <value>
             <Attribute>
@@ -38,7 +52,35 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/asos_geo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/asos_p.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/boohoo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/boohoo_geo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/boohoo_p.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -108,6 +150,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/h&amp;m_geo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/missguided.csv">
           <value>
             <Attribute>
@@ -116,6 +165,13 @@
           </value>
         </entry>
         <entry key="/nike.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/nike_geo.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

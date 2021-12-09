@@ -7,13 +7,11 @@ import re
 # gucci.csv
 # victoriassecret.csv
 # chanel.csv
-
+# nike.csv
 # adidas.csv
+# h&m.csv
 # asos.csv
 # boohoo.csv
-# h&m.csv
-# h&m2.csv
-# nike.csv
 
 # https://stackoverflow.com/questions/33404752/removing-emojis-from-a-string-in-python
 def deEmojify(text):
@@ -43,7 +41,7 @@ def deEmojify(text):
         "]+", flags=re.UNICODE)
     return regrex_pattern.sub(r'',text)
 
-tweets_df = pd.read_csv("Data/Raw Tweet Data/adidas.csv", lineterminator='\n')
+tweets_df = pd.read_csv("Data/Raw Tweet Data/boohoo.csv", lineterminator='\n')
 
 text = tweets_df['text'].values
 text_list = [t.replace(t, deEmojify(t)) for t in text]
@@ -52,6 +50,6 @@ tweets_df['text'] = text_list
 
 geo_tweets_df = tweets_df[tweets_df['geo'].notna()]
 
-tweets_df.to_csv('adidas_p.csv', index=False) # change brand name
-geo_tweets_df.to_csv('adidas_geo.csv', index=False) # change brand name
+tweets_df.to_csv('boohoo_p.csv', index=False) # change brand name
+geo_tweets_df.to_csv('boohoo_geo.csv', index=False) # change brand name
 
