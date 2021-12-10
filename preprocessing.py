@@ -1,5 +1,6 @@
 import pandas as pd
 import re
+import numpy as np
 
 # Done
 # shein.csv
@@ -41,15 +42,16 @@ def deEmojify(text):
         "]+", flags=re.UNICODE)
     return regrex_pattern.sub(r'',text)
 
-tweets_df = pd.read_csv("Data/Raw Tweet Data/boohoo.csv", lineterminator='\n')
+tweets_df = pd.read_csv("Data/Raw Tweet Data/zara.csv", lineterminator='\n')
 
 text = tweets_df['text'].values
 text_list = [t.replace(t, deEmojify(t)) for t in text]
 text_list
 tweets_df['text'] = text_list
+tweets_df['brand'] = np.full((len(tweets_df.index)), "zara")
 
-geo_tweets_df = tweets_df[tweets_df['geo'].notna()]
+#geo_tweets_df = tweets_df[tweets_df['geo'].notna()]
 
-tweets_df.to_csv('boohoo_p.csv', index=False) # change brand name
-geo_tweets_df.to_csv('boohoo_geo.csv', index=False) # change brand name
+tweets_df.to_csv('zara_p.csv', index=False) # change brand name
+#geo_tweets_df.to_csv('boohoo_geo.csv', index=False) # change brand name
 

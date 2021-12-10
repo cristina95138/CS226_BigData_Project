@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/Data/Preprocessed Tweets/chanel_p.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/Data/Preprocessed Tweets/gucci_p.csv">
           <value>
             <Attribute>
@@ -31,6 +38,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/Data/Preprocessed Tweets/zara_p.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/adidas.csv">
           <value>
             <Attribute>
@@ -39,6 +53,13 @@
           </value>
         </entry>
         <entry key="/adidas_geo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/adidas_p.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -172,6 +193,13 @@
           </value>
         </entry>
         <entry key="/nike_geo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/sentiment_analysis_geo.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
