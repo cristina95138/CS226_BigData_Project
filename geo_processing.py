@@ -6,54 +6,38 @@ import base64
 import json
 import ast
 import time
+from ast import literal_eval
 
 
 # https://iq.opengenus.org/geo-api-twitter/
 def coordinates(val):
-    # Define your keys from the developer portal
-    consumer_key = 'sq8lFhE8jITyl7zIMirkgxHvZ'
-    consumer_secret_key = '5fGBGoHltoEMi7O7xpl8rTStnGhDuOG74effc29DnCaWDx5ClG'
+    # assign the values accordingly
+    consumer_key = "sq8lFhE8jITyl7zIMirkgxHvZ"
+    consumer_secret = "5fGBGoHltoEMi7O7xpl8rTStnGhDuOG74effc29DnCaWDx5ClG"
+    access_token = "1263376219958992900-GeTK98sT3X2yERoow6wBMsevoegzsW"
+    access_token_secret = "PQVADgfLShM1fEhP7r2WUFmKjQ1sk3WRcDG9qdB1rwzsJ"
 
-    # Reformat the keys and encode them
-    key_secret = '{}:{}'.format(consumer_key, consumer_secret_key).encode('ascii')
-    # Transform from bytes to bytes that can be printed
-    b64_encoded_key = base64.b64encode(key_secret)
-    # Transform from bytes back into Unicode
-    b64_encoded_key = b64_encoded_key.decode('ascii')
+    # authorization of consumer key and consumer secret
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 
-    base_url = 'https://api.twitter.com/'
-    auth_url = '{}oauth2/token'.format(base_url)
-    auth_headers = {
-        'Authorization': 'Basic {}'.format(b64_encoded_key),
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-    }
-    auth_data = {
-        'grant_type': 'client_credentials'
-    }
-    auth_resp = requests.post(auth_url, headers=auth_headers, data=auth_data)
-    access_token = auth_resp.json()['access_token']
+    # set access to user's access key and access secret
+    auth.set_access_token(access_token, access_token_secret)
 
-    geo_headers = {
-        'Authorization': 'Bearer {}'.format(access_token)
-    }
+    # calling the api
+    api = tweepy.API(auth)
 
-    geo_params = val
+    # Twitter ID of London
+    id = val
 
-    geo_url = 'https://api.twitter.com/1.1/geo/id/' + geo_params + '.json'
-    geo_resp = requests.get(geo_url, headers=geo_headers)
+    # fetching the location
+    place = api.geo_id(id)
 
-    geo_data = geo_resp.json()
-    if geo_data['centroid']:
-        geo_data = geo_data['centroid']
-    else:
-        geo_data = geo_data['coordinates']
-
-    return geo_data
+    return str(place.centroid)
 
 lat = []
 long = []
 
-tweets_df = pd.read_csv("Data/Geo Tweets/zara_geo.csv", lineterminator='\n')
+tweets_df = pd.read_csv("Data/Geo Tweets/shein_geo.csv", lineterminator='\n')
 
 text = tweets_df['geo'].values
 text
@@ -66,18 +50,19 @@ for loc in text:
         lat.append(res['coordinates']['coordinates'][1])
         long.append(res['coordinates']['coordinates'][0])
     elif "place_id" in loc:
-        ++count
+        count = count + 1
         print(count)
-        if count == 15:
+        if count == 75:
             time.sleep(15 * 60)
             count = 0
-        val = loc[14:30]
-        coors = coordinates(val)
-        lat.append(coors[1])
-        long.append(coors[0])
+        res = ast.literal_eval(loc)
+        coors = coordinates(res['place_id'])
+        coors_arr = literal_eval(coors)
+        lat.append(coors_arr[1])
+        long.append(coors_arr[0])
 
 
 tweets_df['lat'] = lat
 tweets_df['long'] = long
 
-tweets_df.to_csv('zara_geo.csv', index=False) # change brand name
+tweets_df.to_csv('shein_geo.csv', index=False) # change brand name
